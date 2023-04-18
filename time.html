@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="wide">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 32 32&#39;%3E%3Cpath fill=&#39;%23ef3e23&#39; d=&#39;M2.29 0h27.43v32H2.29z&#39;/%3E%3Cpath fill=&#39;%23fff&#39; d=&#39;M16 8l-9.14 8L16 24l9.14-8L16 8z&#39;/%3E%3C/svg%3E">
+    <title>APX Invest | Nosso time</title>
+    <meta name="description"
+        content="Investimentos e soluções financeiras completas como o private banking dos capixabas.">
+    <link rel="stylesheet" href="styles/time.css">
+    <style>
+        nav {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            background: url(/.mono/static/5b84739611b6be4784de7c4fca672df70cf16e6d6f82b2b718c9d458780babe2.jpg);
+            background-color: #a6bfd3;
+            background-position: 50%;
+            background-size: cover;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            height: calc(100vh - 56px);
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav a {
+            color: inherit;
+            text-decoration: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        nav .main {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
+            -ms-flex-negative: 1;
+            -ms-flex-preferred-size: 940px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-basis: 940px;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            flex-grow: 0;
+            flex-shrink: 1;
+            letter-spacing: -0.125px;
+            line-height: 1.125;
+            margin: 2rem 1rem;
+            position: relative;
+        }
+
+        nav .head {
+            margin: 0 1rem 1rem;
+        }
+
+        nav .outline {
+            display: block;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            line-height: 1.125;
+        }
+
+        nav .north {
+            display: block;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            position: relative;
+        }
+
+        nav .north,
+        nav .north:hover {
+            color: #0078d2;
+        }
+
+        nav .north:before {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Cpath style='fill:none;stroke:%230078d2;stroke-linecap:round;stroke-width:2px' d='M5 10h20'/%3E%3Cpath d='M17.5 17.5 25 10l-7.5-7.5' style='fill:none;stroke:%230078d2;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px'/%3E%3C/svg%3E");
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            content: "";
+            display: block;
+            height: 1rem;
+            left: -5px;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%) scaleX(-1);
+            transform: translateY(-50%) scaleX(-1);
+            width: 1.5rem;
+        }
+
+        nav .body {
+            height: 100%;
+            margin-bottom: 2rem;
+        }
+
+        nav .body,
+        nav .body a {
+            overflow: hidden;
+            position: relative;
+        }
+
+        nav .body a {
+            background: hsla(0, 0%, 100%, 0.3);
+            border-radius: 0.25rem;
+            color: rgba(0, 0, 0, 0.9);
+            display: block;
+            font-weight: 500;
+            padding: 1.5rem 3rem 1.5rem 1.5rem;
+            text-overflow: ellipsis;
+            -webkit-transition: background 0.125s;
+            transition: background 0.125s;
+            white-space: nowrap;
+        }
+
+        @media (hover: hover) {
+            nav .body a {
+                background: hsla(0, 0%, 100%, 0.2);
+            }
+        }
+
+        nav .body a:hover {
+            background: hsla(0, 0%, 100%, 0.3);
+        }
+
+        nav .body a.current {
+            border-left: 3px solid #0078d2;
+        }
+
+        nav .body a:after {
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            content: "";
+            display: block;
+            height: 1rem;
+            opacity: 1;
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity 0.125s;
+            transition: opacity 0.125s;
+            width: 1.5rem;
+        }
+
+        @media (hover: hover) {
+            nav .body a:after {
+                opacity: 0.5;
+            }
+        }
+
+        nav .body a:hover:after {
+            opacity: 1;
+        }
+
+        nav .body a.leaf:after,
+        nav .body a.link:after {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Cpath d='m10 7-6 6 6 6' style='fill:none;stroke:%230078d2;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px'/%3E%3Cpath d='M4 13h16a6 6 0 0 0 0-12h-4' style='fill:none;stroke:%230078d2;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px'/%3E%3C/svg%3E");
+        }
+
+        nav .body a.node:after {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Cpath style='fill:none;stroke:%230078d2;stroke-linecap:round;stroke-width:2px' d='M5 10h20'/%3E%3Cpath d='M17.5 17.5 25 10l-7.5-7.5' style='fill:none;stroke:%230078d2;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px'/%3E%3C/svg%3E");
+        }
+
+        nav ul {
+            -ms-scroll-chaining: none;
+            -webkit-overflow-scrolling: touch;
+            height: 100%;
+            left: 0;
+            list-style: none;
+            overflow-y: scroll;
+            overscroll-behavior: contain;
+            padding: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            visibility: hidden;
+            width: calc(100% + 50px);
+            z-index: -1;
+        }
+
+        nav ul.current {
+            pointer-events: auto;
+            visibility: visible;
+            z-index: 1;
+        }
+
+        nav ul li {
+            width: calc(100% - 50px);
+        }
+
+        nav ul li:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+        nav .footer {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
+
+        nav .footer a {
+            text-decoration: underline;
+        }
+
+        @-webkit-keyframes rotation {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+
+            to {
+                -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+            }
+        }
+
+        @keyframes rotation {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+
+            to {
+                -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+            }
+        }
+
+        body.menu {
+            overflow: hidden;
+            position: fixed;
+        }
+
+        body.menu #menu:after {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+        }
+
+        body.loaded #menu {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        main {
+            position: relative;
+            -webkit-transition: top 0.2s ease-in-out;
+            transition: top 0.2s ease-in-out;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        main header {
+            -ms-flex-align: center;
+            background: #fff;
+            border-bottom: 1px solid #f2f2f2;
+            font-size: 15px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 98;
+        }
+
+        main header,
+        main header a {
+            -webkit-box-align: center;
+            align-items: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            height: 56px;
+        }
+
+        main header a {
+            -webkit-box-flex: 0;
+            -ms-flex-align: center;
+            color: #1d1d1f;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            margin: 0 15px;
+            overflow: hidden;
+            text-decoration: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        main header .avatar {
+            height: 34px;
+            width: 34px;
+        }
+
+        main header .avatar svg {
+            height: 100%;
+        }
+
+        main header h1 {
+            font-size: inherit;
+            font-weight: 600;
+            margin-bottom: 0;
+            margin-left: 10px;
+        }
+
+        main header .outline {
+            color: #999;
+            font-size: inherit;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        main header .outline .spinner {
+            -webkit-animation: rotation 0.5s steps(8) infinite;
+            animation: rotation 0.5s steps(8) infinite;
+        }
+
+        main header #menu {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-flex: 0;
+            align-items: center;
+            cursor: pointer;
+            display: none;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            height: 56px;
+            justify-content: center;
+            margin-left: auto;
+            width: 56px;
+        }
+
+        main header #menu:after {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%230078D2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2.5 2.5 10 10l7.5-7.5m0 15L10 10l-7.5 7.5'/%3E%3C/svg%3E");
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            content: "";
+            display: block;
+            height: 0.8rem;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transition: all 0.2s;
+            transition: all 0.2s;
+            width: 0.8rem;
+        }
+
+        .hidden {
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .visuallyhidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            border: 0;
+            -webkit-clip-path: inset(0 0 99.9% 99.9%);
+            clip-path: inset(0 0 99.9% 99.9%);
+            height: 1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+    </style>
+    <script>
+        const debounce = (e, t) => {
+            let n = null;
+            return (...l) => {
+                window.clearTimeout(n),
+                    (n = window.setTimeout(() => {
+                        e.apply(null, l);
+                    }, t));
+            };
+        },
+            get_lane_overflows = (e, t) => (
+                (remaining_left = Math.floor(e.scrollLeft / t.offsetWidth)),
+                (remaining_right = Math.floor(Math.floor(e.scrollWidth - (e.scrollLeft + e.offsetWidth)) / t.offsetWidth)),
+                { left: remaining_left > 0, right: remaining_right > 0 }
+            ),
+            get_aspect = () => {
+                let e = window.innerWidth;
+                return e > 1200 ? "wide" : e > 600 ? "medium" : "narrow";
+            },
+            go_next = (e) => {
+                let t = e.target.parentElement.parentElement,
+                    n = t.querySelector(".component"),
+                    l = t.querySelector(".container");
+                n.scrollBy({ top: 0, left: l.clientWidth });
+            },
+            go_prev = (e) => {
+                let t = e.target.parentElement.parentElement,
+                    n = t.querySelector(".component"),
+                    l = t.querySelector(".container");
+                n.scrollBy({ top: 0, left: -l.clientWidth });
+            },
+            handle_pagination = (e) => {
+                let t = e.querySelector(".component"),
+                    n = e.querySelector(".container"),
+                    l = e.querySelector(".pagination"),
+                    o = l.querySelector(".prev"),
+                    r = l.querySelector(".next"),
+                    i = get_lane_overflows(t, n);
+                n.clientWidth;
+                o.removeEventListener("click", go_prev),
+                    r.removeEventListener("click", go_next),
+                    i.left ? (o.classList.remove("inactive"), o.addEventListener("click", go_prev)) : o.classList.add("inactive"),
+                    i.right ? (r.classList.remove("inactive"), r.addEventListener("click", go_next)) : r.classList.add("inactive");
+            },
+            handle_scroll = debounce((e) => {
+                let t = e.target.parentElement;
+                handle_pagination(t);
+            }, 20),
+            handle_resize = debounce((e) => {
+                let t = get_aspect(),
+                    n = document.querySelector("html"),
+                    l = Array.from(n.classList),
+                    o = (l.includes("wide") || l.includes("medium"), document.querySelectorAll("section.lane"));
+                (n.className = t),
+                    o.forEach((e) => {
+                        let t = e.querySelector(".component"),
+                            n = e.querySelector(".container"),
+                            l = get_lane_overflows(t, n);
+                        l.left || l.right ? (e.classList.add("overflow"), handle_pagination(e), t.addEventListener("scroll", handle_scroll)) : e.classList.remove("overflow");
+                    });
+            }, 300);
+        window.addEventListener("resize", handle_resize),
+            window.addEventListener("load", handle_resize),
+            document.addEventListener("DOMContentLoaded", function (e) {
+                let t = {};
+                (t.nav = document.querySelector("nav")),
+                    (t.outline = t.nav.querySelector("h2.outline")),
+                    (t.north = t.nav.querySelector("a.north")),
+                    (t.levels = {}),
+                    t.nav.querySelectorAll("ul").forEach((e) => {
+                        t.levels[e.dataset.level] = e;
+                    });
+                (document.getElementById("year").textContent = new Date().getFullYear()),
+                    document.getElementById("menu").addEventListener("click", function (e) {
+                        return (
+                            e && e.preventDefault(),
+                            document.body.className.split(" ").includes("menu")
+                                ? (document.body.classList.toggle("menu"), window.scrollTo(0, document.body.dataset.y))
+                                : ((document.body.dataset.y = window.scrollY), setTimeout(() => document.body.classList.toggle("menu"), 10)),
+                            document.querySelector("nav").classList.toggle("visuallyhidden"),
+                            !1
+                        );
+                    }),
+                    document.body.classList.add("loaded");
+            });
+    </script>
+
+</head>
+
+<body class="loaded">
+
+    <main>
+        <header>
+            <a href="https://apxinvest.com.br/">
+                <div class="avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="11.75" fill="#fff" stroke="#dedede" stroke-width=".5"
+                            data-name="Ellipse 4"></circle>
+                        <path d="M6 5v14h12V5zm6 10.5L8 12l4-3.5 4 3.5z" fill="#ef3e23"></path>
+                    </svg>
+                </div>
+                <h1>APX Invest</h1>
+            </a>
+            <div class="outline"><span>Nosso time</span></div>
+            <div id="menu"></div>
+        </header>
+        <nav class="visuallyhidden" data-path="0">
+            <div class="main">
+                <div class="head">
+                    <a class="north leaf hidden" href="https://apxinvest.com.br/time#" data-level="-1">Menu</a>
+                    <h2 class="outline">Menu</h2>
+                </div>
+                <div class="body">
+                    <ul class="current" data-level="0" data-name="Menu">
+                        <li><a class="link" href="https://apxinvest.com.br/" data-level="0">Home</a></li>
+                        <li><a class="link" href="https://apxinvest.com.br/filosofia" data-level="1">Filosofia de
+                                Investimentos</a></li>
+                        <li><a class="link" href="https://apxinvest.com.br/time" data-level="2">Nosso Time</a></li>
+                        <li><a class="link" href="https://apxinvest.com.br/wealth-services" data-level="3">Wealth
+                                Services</a></li>
+                        <li><a class="link" href="https://apxinvest.com.br/corporate-services" data-level="4">Corporate
+                                Services</a></li>
+                        <li><a class="link" href="https://apxinvest.com.br/assessoria-investimentos"
+                                data-level="5">Assessoria de Investimentos</a></li>
+                        <li><a class="link" href="https://apxinvest.com.br/carreiras" data-level="6">Carreiras</a></li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <a href="https://www.instagram.com/apx.invest/">Instagram</a> <span>• </span><a
+                        href="https://www.linkedin.com/company/apxinvestimentos/">LinkedIn</a> <span>• </span><span>APX
+                        Invest ©</span>
+                    <span id="year">2023</span>
+                </div>
+            </div>
+        </nav>
+        <article>
+            <section class="Band band first is-filled x3" style="background-color: rgb(239, 62, 35);">
+                <div class="component">
+                    <div class="container">
+                        <div class="item copy">
+                            <div class="content">
+                                <h1>Nosso time</h1>
+                                <p>As pessoas certas, no lugar certo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Headline plain is-plain x1">
+                <div class="component">
+                    <div class="container">
+                        <div class="item copy">
+                            <div class="content">
+                                <h1>Direção</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Profile card-mosaic mosaic odd is-boxed x3">
+                <div class="component">
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/ferracop.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Pedro Chieppe</h2>
+                                <p>Sócio e co-Diretor Executivo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Headline plain is-plain x1">
+                <div class="component">
+                    <div class="container">
+                        <div class="item copy">
+                            <div class="content">
+                                <h1>Portfolio Solutions</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Profile card-mosaic mosaic even is-boxed x3">
+                <div class="component">
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/pessottit.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Tiago Pessotti</h2>
+                                <p>Sócio, Head de Portoflio Solutions e Estrategista-chefe</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/torresv.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Vinicius Torres</h2>
+                                <p>Sócio e Head de Renda Variável</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Headline plain is-plain x1">
+                <div class="component">
+                    <div class="container">
+                        <div class="item copy">
+                            <div class="content">
+                                <h1>Wealth Services</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Profile card-lane lane is-boxed x3 overflow">
+                <div class="component">
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/portoa.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Ana Luisa Porto</h2>
+                                <p>Sócia e Head de Wealth Services</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/dantasl.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Leonardo Dantas</h2>
+                                <p>Banker de Wealth Services</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/senal.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Luiz Fernando Sena</h2>
+                                <p>Banker de Wealth Services</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/figueiredoe.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Eduardo Figueiredo</h2>
+                                <p>Banker de Wealth Services</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/medeirosf.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Felipe Medeiros</h2>
+                                <p>Banker de Wealth Services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination"><button class="prev inactive"></button><button class="next"></button></div>
+            </section>
+            <section class="Headline plain is-plain x1">
+                <div class="component">
+                    <div class="container">
+                        <div class="item copy">
+                            <div class="content">
+                                <h1>Corporate Services</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Profile card-lane lane is-boxed x3">
+                <div class="component">
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/benevidesn.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Nívea Benevides</h2>
+                                <p>Head de Corporate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/ferreiraa.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Antônio Carlos Ferreira</h2>
+                                <p>Banker de Corporate Services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination"><button class="prev"></button><button class="next"></button></div>
+            </section>
+            <section class="Headline plain is-plain x1">
+                <div class="component">
+                    <div class="container">
+                        <div class="item copy">
+                            <div class="content">
+                                <h1>Assessoria de Investimentos</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Profile card-lane lane is-boxed x2 overflow">
+                <div class="component">
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/duarten.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Nelson Duarte</h2>
+                                <p>Head de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/teixeirab.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Bruna Teixeira</h2>
+                                <p>Coordenadora de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/araujol.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Laís Araújo</h2>
+                                <p>Banker de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/polezg.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Gustavo Polez</h2>
+                                <p>Banker de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/ciprianoc.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Carlos Cipriano</h2>
+                                <p>Banker de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/zuccond.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Daniele Zuccon</h2>
+                                <p>Banker de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/stelzerm.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Mariana Stelzer</h2>
+                                <p>Banker de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/gomesl.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Luis Felipe Gomes</h2>
+                                <p>Banker de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="item media">
+                            <figure class="content" style="background-image: url(./images/favaratob.jpg);">
+                            </figure>
+                        </div>
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Beatriz Favarato</h2>
+                                <p>Banker de Assessoria de Investimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination"><button class="prev"></button><button class="next"></button></div>
+            </section>
+            <section class="Box box is-boxed x2">
+                <div class="component">
+                    <div class="container">
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Todo nosso time</h2>
+                                <p>Conheça todo o time que torna a APX Invest o private banking dos capixabas.</p><a
+                                    class="call-to-action" href="https://apxinvest.com.br/media/assessores.pdf">Todos os
+                                    integrantes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Box box is-boxed last">
+                <div class="component">
+                    <div class="container">
+                        <div class="item copy">
+                            <div class="content">
+                                <h2>Buscando novos desafios em sua carreira?</h2>
+                                <p>Adotamos o modelo de Partnership, em que os sócios são executivos, em um
+                                    ambiente que estimula o trabalho em equipe e o empreendedorismo.</p><a
+                                    class="call-to-action" href="https://apxinvest.com.br/carreias">Faça parte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <section class="footer">
+            <div class="component" style="display:block">
+                <img style="margin-bottom: 0; max-width: 100%; max-height: 100px;" src="./images/aai.png">
+                <p class="footnote" style="margin-bottom: 3rem;">
+                    <a href="https://www.instagram.com/apx.invest/"
+                        style="color: #888888; margin-right:.25rem;">Instagram</a>
+                    <a href="https://www.linkedin.com/company/apxinvestimentos/" style="color: #888888">LinkedIn</a>
+                </p>
+                <div class="container"
+                    style="margin-bottom: 2.5rem; display: grid; grid-gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 2fr));">
+                    <div style="padding-right: 1.5rem">
+                        <h3>Fale&nbsp;Conosco</h3>
+                        <p class="footnote" style="margin-bottom: 1rem;user-select: all;">+55 27 99709-6115</p>
+                        <p class="footnote" style="margin-bottom: 1rem;user-select: all;">faleconosco@apxinvest.com.br
+                        </p>
+                    </div>
+                    <div style="padding-right: 1.5rem">
+                        <h3>Ouvidoria&nbsp;APX&nbsp;Invest</h3>
+                        <p class="footnote" style="margin-bottom: 1rem;user-select: all;">ouvidoria@apxinvest.com.br</p>
+                    </div>
+                    <div style="padding-right: 1.5rem">
+                        <h3>Ouvidoria&nbsp;BTG&nbsp;Pactual</h3>
+                        <p class="footnote" style="margin-bottom: 1rem;user-select: all;">0800 722 0048</p>
+                        <p class="footnote" style="margin-bottom: 1rem;user-select: all;">
+                            ouvidoria@btgpactualdigital.com</p>
+                    </div>
+                </div>
+                <img style="margin-bottom: 1.5rem; max-width: 100%; max-height: 100px;" src="./images/selos.png">
+                <p class="footnote" style="user-select: all;">R. Ferreira Coelho, 345, Praia do Suá, Vitória - ES, 29052
+                    210. Seg a sex: 9h às 18h.</p>
+                <hr>
+                <p class="footnote">A APX Investimentos Agente Autônomo de Investimento LTDA está devidamente registrada
+                    na Comissão de Valores Mobiliários CVM , na forma da Instrução Normativa Nº 497/11. Atua como
+                    intermediário do Banco BTG Pactual S/A,
+                    conforme se verifica através do site do próprio BTG Pactual (https://www.sejabtg.com/escritorios).
+                    Na forma da legislação da CVM, o agente autônomo não pode administrar ou gerir o patrimônio de
+                    investidores. O agente autônomo é
+                    um intermediário e depende da autorização prévia do cliente para realizar operações. O conteúdo
+                    apresentado no site não se trata de recomendação, indicação e/ou aconselhamento de investimento,
+                    sendo única e exclusiva
+                    responsabilidade do investidor a tomada de decisão. O investimento em ações é um investimento de
+                    risco e a rentabilidade passada não é garantia de rentabilidade futura. Na realização de operações
+                    com derivativos existe a
+                    possibilidade de significativas perdas patrimoniais, inclusive superiores aos valores investidos.
+                    Para informações ou dúvidas, fale conosco pelo email ouvidoria@apxinvest.com.br ou contate
+                    diretamente o seu agente de investimentos.
+                    Para reclamações contate a Ouvidoria do BTG Pactual pelo telefone 0800 722 0048 (atendimento das 9h
+                    às 18h15, de segunda à sexta-feira, exceto feriados) ou pelo email ouvidoria@btgpactualdigital.com
+                </p>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
